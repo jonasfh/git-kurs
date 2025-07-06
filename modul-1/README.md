@@ -332,6 +332,8 @@ git merge origin/main
 
 ## 🎒 Eksempel
 
+### Merge commit
+
 ```mermaid
 gitGraph
     commit id: "main A"
@@ -345,6 +347,30 @@ gitGraph
     merge main
     checkout main
     merge feature
+```
+
+### Rebase
+
+__før rebase__
+```mermaid
+gitGraph
+    commit id: "main A"
+    commit id: "main B"
+    branch feature
+    checkout feature
+    commit id: "feature 1"
+    checkout main
+    commit id: "main C"
+```
+__etter rebase__
+```mermaid
+gitGraph
+    commit id: "main A"
+    commit id: "main B"
+    commit id: "main C"
+    branch feature
+    checkout feature
+    commit id: "feature 1"
 ```
 
 Bruker `git rebase origin/main` for å flytte feature-commits oppå `main C`, før vi merger inn i `main`. Dette gir en renere historikk.
