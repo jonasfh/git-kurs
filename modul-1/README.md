@@ -296,7 +296,7 @@ gitGraph
     commit id: "Bugfix som trengs i main"
     commit id: "Eksperimentell endring"
     checkout main
-    cherryPick id: "Bugfix som trengs i main"
+    cherry-pick id: "Bugfix som trengs i main"
 ```
 
 Med `git cherry-pick` henter vi kun bugfix-commiten uten resten av feature-branchen.
@@ -342,7 +342,7 @@ gitGraph
     checkout main
     commit id: "main C"
     checkout feature
-    rebase main
+    merge main
     checkout main
     merge feature
 ```
